@@ -39,6 +39,8 @@ if (platform?("ubuntu") && node.platform_version.to_f <= 9.10) || debian_before_
     version '1.7.2-1'
     action :install
   end
+elsif platform?("mac_os_x")
+  package "rabbitmq"
 else
   package "rabbitmq-server"
 end
