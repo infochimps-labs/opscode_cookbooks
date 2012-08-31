@@ -23,8 +23,8 @@ python_pkgs = value_for_platform(
     "default" => ["python","python-dev"]
   },
   ["centos","redhat","fedora"] => {
-    "default" => ["python26","python26-devel"],
-    "6.2"     => ["python","python-devel"]
+    "default"      => ["python26","python26-devel"],
+    ["6.2", "6.3"] => ["python","python-devel"]
   },
   ["freebsd"] => {
     "default" => ["python"]
