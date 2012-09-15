@@ -17,7 +17,8 @@
 # limitations under the License.
 #
 
-default[:thrift][:home_dir]            = "/usr/local/bin/thrift"
+default[:thrift][:home_dir]          = "/usr/local/share/thrift"
+default[:thrift][:prefix_root]       = '/usr/local'
 
 default[:thrift][:version]           = '0.8.0'
 default[:thrift][:release_url]       = ':apache_mirror:/:name:/:version:/:name:-:version:.tar.gz'

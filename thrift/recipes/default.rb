@@ -24,6 +24,10 @@ include_recipe "boost"
 include_recipe "python"
 include_recipe "install_from"
 
+# no seriously -- thrift wants these ancient and unjustified gem versions
+gem_package('rspec'){   version '1.3.2';      action :install }
+gem_package('mongrel'){ version '1.2.0.pre2'; action :install; options(:prerelease => true) }
+
 packages = value_for_platform(
   ["centos", "redhat", "suse", "fedora" ] => {
     "default" => %w{ flex bison libtool autoconf pkgconfig }
@@ -42,6 +46,12 @@ install_from_release(:thrift) do
   checksum      node[:thrift][:checksum]
   home_dir      node[:thrift][:home_dir]
   action        [:configure_with_autoconf, :install_with_make]
-  autoconf_opts node[:thrift]['configure_options']
-  not_if{ ::File.exists?("#{node[:thrift][:home_dir]}/thrift") }
+  autoconf_opts [node[:thrift][:configure_options], "--prefix #{node[:thrift][:prefix_root]}"].flatten.compact
+  not_if{ ::File.file?("#{node[:thrift][:prefix_root]}/lib/libthrift-#{node[:thrift][:version]}.jar") }
 end
+
+# Tell everyone about all the awesome jars of stuff we have
+
+node[:thrift][:exported_jars] = [
+  "#{node[:thrift][:home_dir]}/lib/java/build/libthrift-0.8.0.jar",
+]
