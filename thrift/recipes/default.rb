@@ -32,9 +32,7 @@ packages = value_for_platform(
   ["centos", "redhat", "suse", "fedora" ] => {
     "default" => %w{ flex bison libtool autoconf pkgconfig }
   },
-  "default" => {
-    "default" => %w{ flex bison libtool autoconf pkg-config }
-  }
+  "default" => %w{ flex bison libtool autoconf pkg-config }
 )
 packages.each do |pkg|
   package pkg
