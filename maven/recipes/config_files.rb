@@ -1,3 +1,10 @@
+directory node[:maven][:conf_dir] do
+    owner "root"
+    group "root"
+    mode "0755"
+    recursive true
+end
+
 template "#{node[:maven][:conf_dir]}/settings.xml" do
     owner "root"
     group "root"
