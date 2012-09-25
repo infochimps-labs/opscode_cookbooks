@@ -26,7 +26,7 @@ include_recipe "install_from"
 
 # no seriously -- thrift wants these ancient and unjustified gem versions
 gem_package('rspec'){   version '1.3.2';      action :install }
-gem_package('mongrel'){ version '1.2.0.pre2'; action :install; options(:prerelease => true) }
+gem_package('mongrel'){ version '1.2.0.pre2'; action :install; options("--prerelease --no-rdoc --no-ri") }
 
 packages = value_for_platform(
   ["centos", "redhat", "suse", "fedora" ] => {
