@@ -3,7 +3,7 @@ maintainer_email "cookbooks@opscode.com"
 license          "Apache 2.0"
 description      "Installs zlib"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "1.0.2"
+version          IO.read(File.join(File.dirname(__FILE__), VERSION))
 
 recipe "zlib", "Installs zlib development package"
 

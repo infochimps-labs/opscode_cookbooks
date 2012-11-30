@@ -2,7 +2,7 @@ maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs djbdns and configures DNS services"
-version           "0.99.1"
+version          IO.read(File.join(File.dirname(__FILE__), VERSION))
 recipe            "djbdns", "Installs djbdns from package or source and creates users"
 recipe            "djbdns::axfr", "Sets up djbdns AXFR service"
 recipe            "djbdns::cache", "Sets up public dnscache service"

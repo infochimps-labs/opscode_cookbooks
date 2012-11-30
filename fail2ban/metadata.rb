@@ -2,7 +2,7 @@ maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs and configures fail2ban"
-version           "1.0.0"
+version          IO.read(File.join(File.dirname(__FILE__), VERSION))
 
 recipe "fail2ban", "Installs and configures fail2ban"
 

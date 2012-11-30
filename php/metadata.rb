@@ -2,7 +2,7 @@ maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs and maintains php and php modules"
-version           "1.0.0"
+version          IO.read(File.join(File.dirname(__FILE__), VERSION))
 
 depends "build-essential"
 depends "xml"
