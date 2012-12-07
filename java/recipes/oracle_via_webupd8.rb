@@ -57,6 +57,8 @@ file "/etc/profile.d/jdk.sh" do
   mode 0755
 end
 
+link("/usr/lib/java-#{jdk_version}-oracle").to "/usr/lib/default-java"
+
 ## Older ways
 # case jdk_version
 # when "6"
