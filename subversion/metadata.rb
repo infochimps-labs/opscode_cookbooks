@@ -2,7 +2,7 @@ maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs subversion"
-version          IO.read(File.join(File.dirname(__FILE__), VERSION))
+version          IO.read(File.join(File.dirname(__FILE__), 'VERSION'))
 
 %w{ redhat centos fedora ubuntu debian windows }.each do |os|
   supports os

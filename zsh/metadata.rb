@@ -2,7 +2,7 @@ maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs zsh"
-version          IO.read(File.join(File.dirname(__FILE__), VERSION))
+version          IO.read(File.join(File.dirname(__FILE__), 'VERSION'))
 
 recipe "zsh", "Installs zsh"
 

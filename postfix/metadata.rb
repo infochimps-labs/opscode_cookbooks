@@ -2,7 +2,7 @@ maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
 description       "Installs and configures postfix for client or outbound relayhost, or to do SASL auth"
-version          IO.read(File.join(File.dirname(__FILE__), VERSION))
+version          IO.read(File.join(File.dirname(__FILE__), 'VERSION'))
 recipe            "postfix", "Installs and configures postfix"
 recipe            "postfix::sasl_auth", "Set up postfix to auth to a server with sasl"
 
