@@ -34,6 +34,7 @@ apt_repository "webupd8team-oracle-java" do
   key "EEA14886"
   notifies :run, "execute[apt-get update]", :immediately
   notifies :run, "execute[accept Oracle's license]", :immediately
+#   notifies :run, "execute[update java alternatives]", :immediately
 end
 
 execute "accept Oracle's license" do
@@ -58,6 +59,18 @@ file "/etc/profile.d/jdk.sh" do
 end
 
 link("/usr/lib/java-#{jdk_version}-oracle").to "/usr/lib/default-java"
+
+jvm = "/usr/lib/jvm/java-#{jdk_version}-oracle"
+link(java_home).to jvm
+
+# FIXME: this should be triggered by install only, but a bad version got burned
+#   onto the AMI, so there's no good way to make this idempotent and yet ensure
+#   that it executes on those bad images. Clean this up once the problem has been
+#   corrected everywhere (including the newest image).
+execute "update java alternatives" do
+  command "update-alternatives --set java #{jvm}/jre/bin/java"
+#   action :nothing
+end
 
 ## Older ways
 # case jdk_version

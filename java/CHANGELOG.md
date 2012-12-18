@@ -1,3 +1,9 @@
+## v1.6.1
+* Cleaning up oracle_via_webupd8 - fixing JVM and updating alternatives
+
+## v1.6.0
+* Adding oracle_via_webupd8, an Ubuntu-only install of Oracle java that satisfies package dependencies
+
 ## v1.5.2:
 
 * [COOK-1200] - remove sun-java6-jre on Ubuntu before installing
