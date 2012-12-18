@@ -50,6 +50,6 @@ end
 
 # Tell everyone about all the awesome jars of stuff we have
 
-node[:thrift][:exported_jars] = [
+node.set[:thrift][:exported_jars] = [
   "#{node[:thrift][:home_dir]}/lib/java/build/libthrift-0.8.0.jar",
 ]
