@@ -1,7 +1,7 @@
 begin
   require 'mysql'
 rescue LoadError
-  Chef::Log.info("Missing gem 'mysql'")
+  Chef::Log.debug("Missing gem 'mysql'")
 end
 
 module Opscode
