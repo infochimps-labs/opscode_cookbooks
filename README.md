@@ -1,3 +1,9 @@
+DEPRECATED
+==========
+
+This repository has been deprecated, and will receive no further updates; it will be closed effective February 1st, 2013. All cookbooks still in active use in Ironfan infrastructure have been moved to https://github.com/infochimps-labs/ironfan-pantry. Please update all references accordingly.
+
+
 Opscode Public Cookbooks for Chef
 =================================
 
